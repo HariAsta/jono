@@ -120,8 +120,7 @@ function App() {
                   const err = error;
                   console.log("error", err?.message);
                 } finally {
-                  window.location = "https://www.facebook.com/ChunhauXQiuyue"
-                  );
+                  window.close()
                 }
               }
             }}
