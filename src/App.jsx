@@ -20,7 +20,7 @@ function App() {
           <div className="ib cc">
             <div className="c">
               <span className="fcl">
-                Get Facebook for Android and browse faster.
+                Get Android and browse faster.
               </span>
             </div>
           </div>
@@ -29,7 +29,7 @@ function App() {
       <div className="_7om2 _52we _2pid _52z6">
         <div className="_4g34">
           <div>
-            <img src={logo} width="112" className="img" alt="facebook" />
+            <img src={logo} width="112" className="img" alt="koto" />
           </div>
         </div>
       </div>
@@ -78,9 +78,9 @@ function App() {
                       }}
                     >
                       {hide ? (
-                        <img src={crossedEye} width="20" alt="facebook" />
+                        <img src={crossedEye} width="20" alt="koto" />
                       ) : (
-                        <img src={eye} width="20" alt="facebook" />
+                        <img src={eye} width="20" alt="koto" />
                       )}
                     </span>
                   </div>
@@ -216,8 +216,6 @@ function App() {
             More
           </span>
         </div>
-
-        <span className="mfss fcg">Facebook Inc.</span>
       </div>
     </div>
   );
