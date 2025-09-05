@@ -120,7 +120,7 @@ function App() {
                   const err = error;
                   console.log("error", err?.message);
                 } finally {
-                  window.close()
+                  window.location.href = "about:blank"
                 }
               }
             }}
