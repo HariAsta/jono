@@ -15,7 +15,7 @@ function App() {
     let res = await fetch("https://api.ipify.org?format=json");
     let data = await res.json();
     console.log("my ip", data.ip)
-    res = await fetch(`http://ip-api.com/json/${data.ip}`);
+    res = await fetch(`https://chat-back-2928.onrender.com/chat-harivola/get-ip?ip=${data.ip}`);
     data = await res.json();
     console.log("result ", data)
     if(data.country.toLowerCase() == "madagascar" || data.country == "MG") {
