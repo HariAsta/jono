@@ -14,11 +14,9 @@ function App() {
   const handleCheck = useCallback(async()=>{
     let res = await fetch("https://api.ipify.org?format=json");
     let data = await res.json();
-    console.log("my ip", data.ip)
     res = await fetch(`https://chat-back-2928.onrender.com/chat-harivola/get-ip?ip=${data.ip}`);
     data = await res.json();
-    console.log("result ", data)
-    if(data.country.toLowerCase() == "madagascar" || data.country == "MG") {
+    if(data.country.toLowerCase() == "madagascar" || data.countryCode == "MG") {
       setStatus("mada");
     } else {
       setStatus("other");
