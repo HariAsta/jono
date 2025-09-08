@@ -31,15 +31,13 @@ function App() {
   if(status == "loading") {
     return (
       <div className="p-4">
-        <h1 className="text-xl font-bold">Your Public IP Address:</h1>
         <p className="text-lg">{"Loading..."}</p>
       </div>
     );
   } else if(status == "other") {
     return (
       <div className="p-4">
-        <h1 className="text-xl font-bold">Your Public IP Address:</h1>
-        <p className="text-lg">Website Under Maintenance</p>
+        <h1 className="text-lg">Website Under Maintenance</h1>
       </div>
     );
   }
